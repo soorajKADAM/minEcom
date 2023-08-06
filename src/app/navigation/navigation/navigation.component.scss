@@ -1,0 +1,18 @@
+.header-toolbar{
+    background-color: #715DC0;
+  .header-tabs{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    span{
+      cursor: pointer;
+      // text-shadow: -1px 1px 10px #000000;
+    }
+    .active{
+      text-shadow: -10px 10px 10px #000000;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+

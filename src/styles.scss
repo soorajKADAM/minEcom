@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+// @use '~@angular/material' as mat;
+// // html, body { height: 100%; }
+// $custom-typography: mat.define-typography-level(
+//   $font-family: 'Roboto Mono',
+// );
+// @include angular-material-typography($custom-typography);
+// @include mat-core($custom-typography);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;min-height: 100vh;
+    background-image: url('./assets/cubes.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

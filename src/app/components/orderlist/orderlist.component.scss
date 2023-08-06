@@ -1,0 +1,14 @@
+.orderlist{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 0 200px rgba(96, 4, 150, 0.63);
+  width: 100%;
+  margin-top: 16px;
+  .listitems{
+    border-bottom: 1px solid white;
+  }
+}
+.template{
+  text-align: center;
+  font-family:"Varela Round" ;
+}

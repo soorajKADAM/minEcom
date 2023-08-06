@@ -1,0 +1,15 @@
+<div class="card-container">
+  <mat-card class="main-card">
+    <mat-card-content>
+    <app-header></app-header>
+      <div class="formbody" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+      <mat-card-title>Enter Name:</mat-card-title>
+      <mat-form-field>
+        <input type="text" #name matInput autocomplete="off">
+      </mat-form-field>
+      <button mat-raised-button class="actionbtn" (click)="save(name.value)">Add</button>
+      <span *ngIf="(name$ | async)as name">{{name}}!</span>
+    </div>
+    </mat-card-content>
+  </mat-card>
+  </div>

@@ -1,0 +1,9 @@
+<div class="orderlist" *ngIf="(orderinfo$ | async) as orderinfo">
+  <mat-list role="list" *ngIf="orderinfo.orders?.length;else noOrders">
+    <mat-list-item role="listitem" class="listitems">Your Orders are:</mat-list-item>
+    <mat-list-item role="listitem"  class="listitems" *ngFor="let order of orderinfo.orders">{{order}}</mat-list-item>
+  </mat-list>
+</div>
+<ng-template #noOrders>
+  <h2 class="template">No orders made!</h2>
+</ng-template>

@@ -1,0 +1,13 @@
+<div class="header">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" class="flex-item">
+  <mat-icon mat-card-avatar svgIcon="profile" class="cash"></mat-icon>
+  <span class="show_name" *ngIf="(customerData$ | async)as customerData">{{customerData.name}}</span>
+</div>
+  <div class="cash-balance" class="flex-item" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
+    <mat-icon *ngIf="(customerData$ | async)as customerData" mat-card-avatar svgIcon="cart" matBadge="{{customerData.orders.length}}" matBadgeColor="warn" class="cart"></mat-icon>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <span class="show_balance" *ngIf="(customerData$ | async)as customerData">{{customerData.balance| currency:'USD'}}</span>
+    <mat-icon mat-card-avatar svgIcon="dollar" class="cash"></mat-icon>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="card-container">
+  <mat-card class="main-card">
+    <mat-card-content>
+      <app-header></app-header>
+      <div *ngIf="(orderinfo$ | async) as orderinfo">
+
+        <!-- This is where the previous code is -->
+      <!-- <div class="formbody" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px" *ngIf="orderinfo.orders;else noBalance">
+      <mat-card-title>Add Orders:</mat-card-title>
+      <mat-form-field>
+        <input type="number" #order matInput autocomplete="off">
+      </mat-form-field>
+      <button mat-raised-button class="actionbtn" (click)="addOrder(order)" *ngIf="(orderinfo$ | async) as orderinfo">Add</button>
+    </div> -->
+              <!-- this is where the previous code ends -->
+
+
+              <ng-container [ngTemplateOutlet]="
+                (!orderinfo.balance && !orderinfo.name)? showBoth :
+                (orderinfo.balance && !orderinfo.name)? showNameMsg:
+                (!orderinfo.balance && orderinfo.name)? showBalMsg:
+                showForm
+               ">
+              </ng-container>
+              <ng-template #showBoth>
+                <h2 class="template">Insufficient funds,Please add!</h2>
+                <h2 class="template">Please add name!</h2>
+              </ng-template>
+              <ng-template #showNameMsg>
+                <h2 class="template">Please add name!</h2>
+              </ng-template>
+              <ng-template #showBalMsg>
+                <h2 class="template">Insufficient funds,Please add!</h2>
+              </ng-template>
+              <ng-template #showForm>
+                <div class="formbody" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px" *ngIf="orderinfo.orders;else noBalance">
+                  <mat-card-title>Add Orders:</mat-card-title>
+                  <mat-form-field>
+                    <input type="number" #order matInput autocomplete="off">
+                  </mat-form-field>
+                  <button mat-raised-button class="actionbtn" (click)="addOrder(order)" *ngIf="(orderinfo$ | async) as orderinfo">Add</button>
+                </div> 
+              </ng-template>
+  </div>
+  <ng-template #noBalance >
+    <h2 class="template">Insufficient funds,Please add!</h2>
+   </ng-template>
+    <div *ngIf="orderinfo$ | async">
+     <app-orderlist></app-orderlist>
+    </div>
+
+
+    </mat-card-content>
+  </mat-card>
+  </div>

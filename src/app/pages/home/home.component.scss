@@ -1,0 +1,54 @@
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .main-card{
+    width: 30rem;
+    height: 25rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    box-shadow: -10px 12px 2px 1px rgba(0, 0, 255, .2);
+
+      .cart{
+      width: 2rem;
+      height: 2rem;
+      }
+        .cash{
+          width: 2rem;
+          height: 2rem;
+        }
+      .show_balance{
+        font-family:"Varela Round";
+        font-size: 20px;
+        color: #6528F7;
+      }
+      .orderBox{
+        height: 100%;
+        width: 100%;
+        mat-card-title{
+          color: black;
+          font-family: "Varela Round";
+        }
+        .template{
+          text-align: center;
+          font-family:"Varela Round" ;
+        }
+      }
+      .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 14px 12px 14px;
+        .show_name{
+          font-family: "Varela Round";
+          font-weight: bold;
+          margin-bottom: 14%;
+        }
+      }
+
+  }
+}
